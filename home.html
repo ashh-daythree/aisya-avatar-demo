@@ -195,10 +195,14 @@ else if (elem.msRequestFullscreen) {
 
 function closeFullscreen() {
 
-document.querySelector(".fullscreen-exit").style.display = "none";
-
 if (document.exitFullscreen) {
   document.exitFullscreen();
+} 
+else if (document.webkitExitFullscreen) {
+  document.webkitExitFullscreen();
+} 
+else if (document.msExitFullscreen) {
+  document.msExitFullscreen();
 }
 
 }
