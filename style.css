@@ -526,6 +526,11 @@ box-shadow:0 10px 20px rgba(0,0,0,0.25);
 
 }
 
+.avatar-wrapper{
+position:relative;
+width:700px;
+margin:auto;
+}
 
 /* FULLSCREEN BUTTON */
 .fullscreen-icon{
