@@ -537,7 +537,7 @@ position:relative;
 .fullscreen-icon{
 
 position:absolute;
-top:12px;
+bottom:12px;
 right:12px;
 
 width:38px;
@@ -564,7 +564,7 @@ z-index:99999;
 .fullscreen-exit{
 
 position:absolute;
-top:12px;
+bottom:12px;
 right:12px;
 
 width:38px;
