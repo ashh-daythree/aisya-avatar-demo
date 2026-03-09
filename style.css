@@ -440,7 +440,7 @@ pointer-events:none;
 
 }
 
-#anam-container::after{
+/*#anam-container::after{
 
 content:"";
 
@@ -461,6 +461,7 @@ pointer-events:none;
 
 z-index:9999;
 }
+*/
 
 .ai-wrapper{
 
