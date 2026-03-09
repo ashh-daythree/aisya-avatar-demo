@@ -139,12 +139,9 @@ fintech, telecommunications, e-commerce, travel and utilities.
 <div class="question">How can a company start investing in Selangor?</div>
 </div>
 
-<div class="avatar-wrapper">
+<div class="avatar-wrapper">     
 
-<div id="anam-container">
-
-<button id="fullscreenBtn" class="fullscreen-icon" onclick="openFullscreen()">⛶</button>
-<button id="exitBtn" class="fullscreen-exit" onclick="closeFullscreen()">✕</button>        
+<div id="anam-container">      
 
 <anam-agent
 agent-id="07717045-dcc1-408f-a2bc-c2c76e687737"
@@ -153,6 +150,8 @@ style="width:100%; height:100%;">
 </anam-agent>
 
 </div>
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
 
 </div>
 
@@ -178,74 +177,25 @@ style="width:100%; height:100%;">
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+function toggleFullscreen(){
 
-const container = document.getElementById("anam-container");
-const fullscreenBtn = document.getElementById("fullscreenBtn");
-const exitBtn = document.getElementById("exitBtn");
+const elem = document.getElementById("anam-container");
 
-/* OPEN FULLSCREEN */
+if(!document.fullscreenElement){
 
-window.openFullscreen = function(){
-
-if (container.requestFullscreen) {
-container.requestFullscreen();
-}
-else if (container.webkitRequestFullscreen) {
-container.webkitRequestFullscreen();
-}
-else if (container.msRequestFullscreen) {
-container.msRequestFullscreen();
+if(elem.requestFullscreen){
+elem.requestFullscreen();
 }
 
-}
+}else{
 
-/* CLOSE FULLSCREEN */
-
-window.closeFullscreen = function(){
-
-if (document.exitFullscreen) {
+if(document.exitFullscreen){
 document.exitFullscreen();
 }
-else if (document.webkitExitFullscreen) {
-document.webkitExitFullscreen();
-}
-else if (document.msExitFullscreen) {
-document.msExitFullscreen();
-}
-
-}
-
-/* HANDLE BUTTON SWITCH */
-
-function updateButtons(){
-
-if(document.fullscreenElement){
-
-fullscreenBtn.style.display = "none";
-exitBtn.style.display = "flex";
-
-}
-else{
-
-fullscreenBtn.style.display = "flex";
-exitBtn.style.display = "none";
 
 }
 
 }
-
-/* Listen for fullscreen changes */
-
-document.addEventListener("fullscreenchange", updateButtons);
-document.addEventListener("webkitfullscreenchange", updateButtons);
-document.addEventListener("msfullscreenchange", updateButtons);
-
-/* Set initial state */
-
-updateButtons();
-
-});
 
 </script>
 
