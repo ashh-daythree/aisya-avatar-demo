@@ -137,21 +137,19 @@ fintech, telecommunications, e-commerce, travel and utilities.
 <div class="question">What industries are growing in Selangor?</div>
 <div class="question">What support does Invest Selangor provide?</div>
 <div class="question">How can a company start investing in Selangor?</div>
-</div>
-
-<div class="avatar-wrapper">     
+</div>     
 
 <div id="anam-container">      
+
+<button id="fullscreenBtn" class="fullscreen-icon" onclick="openFullscreen()">⛶</button>
+
+<button id="exitBtn" class="fullscreen-exit" onclick="closeFullscreen()">✕</button>
 
 <anam-agent
 agent-id="07717045-dcc1-408f-a2bc-c2c76e687737"
 mode="inline"
 style="width:100%; height:100%;">
 </anam-agent>
-
-</div>
-
-<button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
 
 </div>
 
@@ -177,28 +175,33 @@ style="width:100%; height:100%;">
 
 <script>
 
-function toggleFullscreen(){
+const container = document.getElementById("anam-container");
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+const exitBtn = document.getElementById("exitBtn");
 
-const elem = document.getElementById("anam-container");
+function openFullscreen(){
 
-if(!document.fullscreenElement){
-
-if(elem.requestFullscreen){
-elem.requestFullscreen();
+if(container.requestFullscreen){
+container.requestFullscreen();
 }
 
-}else{
+fullscreenBtn.style.display = "none";
+exitBtn.style.display = "flex";
+
+}
+
+function closeFullscreen(){
 
 if(document.exitFullscreen){
 document.exitFullscreen();
 }
 
-}
+fullscreenBtn.style.display = "flex";
+exitBtn.style.display = "none";
 
 }
 
 </script>
-
 
 </body>
 </html>
