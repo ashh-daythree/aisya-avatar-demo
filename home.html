@@ -141,9 +141,7 @@ fintech, telecommunications, e-commerce, travel and utilities.
 </div>     
 
 <div class="anam-center">
-<div id="anam-container">   
-    
-<div id="avatar-subtitles"></div>    
+<div id="anam-container">      
 
 <button id="fullscreenBtn" class="fullscreen-icon" onclick="openFullscreen()">⛶</button>
 
@@ -216,37 +214,6 @@ fullscreenBtn.style.display = "flex";
 exitBtn.style.display = "none";
 
 }
-
-</script>
-
-<script>
-
-const subtitleBox = document.getElementById("avatar-subtitles");
-
-const observer = new MutationObserver(() => {
-
-const messages = document.querySelectorAll("anam-agent .message");
-
-if(messages.length === 0) return;
-
-const lastMessage = messages[messages.length - 1];
-
-const role = lastMessage.getAttribute("data-role");
-const text = lastMessage.innerText;
-
-if(role === "persona"){
-subtitleBox.innerText = "AI: " + text;
-}
-else{
-subtitleBox.innerText = "User: " + text;
-}
-
-});
-
-observer.observe(document.body,{
-childList:true,
-subtree:true
-});
 
 </script>
 
