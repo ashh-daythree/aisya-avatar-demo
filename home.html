@@ -217,5 +217,36 @@ exitBtn.style.display = "none";
 
 </script>
 
+<script>
+
+const subtitleBox = document.getElementById("avatar-subtitles");
+
+const observer = new MutationObserver(() => {
+
+const messages = document.querySelectorAll("anam-agent .message");
+
+if(messages.length === 0) return;
+
+const lastMessage = messages[messages.length - 1];
+
+const role = lastMessage.getAttribute("data-role");
+const text = lastMessage.innerText;
+
+if(role === "persona"){
+subtitleBox.innerText = "AI: " + text;
+}
+else{
+subtitleBox.innerText = "User: " + text;
+}
+
+});
+
+observer.observe(document.body,{
+childList:true,
+subtree:true
+});
+
+</script>
+
 </body>
 </html>
